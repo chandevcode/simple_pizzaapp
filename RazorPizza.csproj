@@ -6,4 +6,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="Pages\Forms\" />
+    <Folder Include="Pages\Checkout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\Forms\" />
+    <None Remove="Pages\Checkout\" />
+  </ItemGroup>
 </Project>
