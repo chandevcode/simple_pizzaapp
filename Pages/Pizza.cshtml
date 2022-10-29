@@ -1,0 +1,46 @@
+﻿@page
+@model RazorPizza.Pages.PizzaModel
+@{
+
+}
+<div class="text-center">
+    <div class="mainText">
+        <h1 class="display-4 text-capitalize text-black">Our breed selection our pizza</h1>
+        <h4> Choose one, or try our Pizza Builder! Then Order an Done!</h4>
+        <h4> We Already know everything</h4>
+        <p class="smallText"><i> only one pizza per order</i></p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-2">
+                <div class="w-100 row makeYourOwnDiv">
+                    <div class="col-4">
+                        <img src="~/images/Create.png" class="w-100" />
+                    </div>
+                    <div class="col-8 align-items-center">
+                        <div class="align-middle makeYourOwnText">
+                            <h3 style="text-align:left;"> Create your own Pizza </h3>
+                            <p style="text-align: left;">Make Your Own Pizza with our Pizza Maker!</p>
+                            <a class="btn btn-primary mb-3" style="float: left;" asp-area=""
+                               asp-page="Forms/CustomPizza">Try</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            @foreach (var pizza in Model.fakePizzaDB) 
+                {
+                    var imagePath = "~/images/" + (pizza.ImageTitle + ".png");
+
+                    <div class="col-4 mb-5">
+                        <a asp-area="" asp-page="Checkout/Checkout" asp-route-PizzaName="@pizza.PizzaName">
+
+                        <img src=@imagePath class="w-100" asp-append-version="true" />
+
+                        </a>
+                        <br />
+                    </div>
+                }
+        </div>
+    </div>
+</div>
